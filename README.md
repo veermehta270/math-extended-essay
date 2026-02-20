@@ -82,29 +82,11 @@ Compare results against original driver route
 
 ---
 
-## Repository Structure
 
-```
-school-bus-route-optimisation/
-├── main.tex                  ← Full LaTeX source
-├── bibliography.bib          ← References
-├── img/                      ← Google Maps figures, result maps
-│   ├── Flowchart.jpeg
-│   ├── gm1.png
-│   ├── original route.png
-│   ├── Nearestneighbour result.png
-│   ├── dynamicresult.png
-│   └── antresult.png
-├── output/
-│   └── extended_essay.pdf    ← Compiled PDF
-└── README.md
-```
-
----
 
 ## Read the Paper
 
-📄 [View PDF](output/extended_essay.pdf)
+📄 [View PDF](Research Paper.pdf)
 
 ---
 
@@ -112,7 +94,7 @@ school-bus-route-optimisation/
 
 - **Data Collection:** Google Maps (GPS coordinates, road distances)
 - **K-Means Computation:** Microsoft Excel
-- **Dynamic Programming (Cluster 3):** C++ implementation (Held-Karp algorithm)
+- **Dynamic Programming
 - **Typesetting:** LaTeX (`amsmath`, `forest`, `tabularray`, `graphicx`)
 
 ---
