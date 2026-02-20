@@ -80,15 +80,7 @@ Compare results against original driver route
 - Ant colony optimisation, despite being a heuristic, outperformed both other methods by leveraging pheromone-based probabilistic search across the full problem space
 - The 154-meter improvement is modest but demonstrates the potential of metaheuristics for real operational problems
 
----
 
-
-
-## Read the Paper
-
-📄 [View PDF](Research Paper.pdf)
-
----
 
 ## Tools Used
 
