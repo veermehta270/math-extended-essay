@@ -1,0 +1,99 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{chemfig}
+\usepackage{wrapfig}
+\usepackage[margin = 0.7in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[document]{ragged2e}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage{varioref}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\useunder{\uline}{\ul}{}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{tabularray}
+\usepackage[utf8]{inputenc}
+\renewcommand*\thesection{\arabic{section}.0}
+\renewcommand*\thesubsection{\arabic{section}.\arabic{subsection}0}
+
+\title{Math Extended Essay}
+\author{Veer Mehta}
+\date{}
+\begin{document}
+\maketitle
+
+\section{Journey}
+\begin{enumerate}
+    \item Got the data about route of a bus from the school transport department.
+    \item Looked up at various methods to optimise the route the bus travels. Realised that it is a travelling salesman problem. Travelling salesman problem is one in which a salesman starts to travel from one city and travels to various different cities and returns to the same city from where she/he started. Each city needs to be covered only once. The shortest route has to be identified. 
+    \item Searched about various methods to solve the TSP. There are major 3 types of methods. 
+    \begin{itemize}
+        \item Exact algorithms
+        \begin{itemize}
+            \item Guaranteed to find an optimal solution
+            \item Would not be practically possible to calculate large problem instances due to their exponential time complexity.
+            \item It includes Brute force, Dynamic programming and Branch \& Bound methods.
+        \end{itemize}
+        \item Heuristics
+        \begin{itemize}
+            \item Faster than exact algorithms and can provide good solutions in a reasonable amount of time.
+            \item Do not guarantee optimal solution
+            \item It includes Nearest neighbour, genetic algorithms and ant colony optimisation
+        \end{itemize}
+        \item Approximations
+        \item Provide a solution that is guaranteed to be within a certain factor of the optimal solution.
+        \item It includes Christofides' algorithms and 2-approximation algorithm
+    \end{itemize}
+    \item The research question required a very accurate answer, and this will be provided by exact algorithms. Choice between branc \& bound and dynamic programming.
+
+    Advantages of dynamic programming:
+    \begin{itemize}
+        \item Guaranteed optimality: Dynamic programming guarantees that the solution found is optimal, meaning it provides the shortest possible Hamiltonian cycle that visits all nodes exactly once.
+        \item Faster for small instances: Dynamic programming is generally faster than branch and bound for small instances of the TSP (up to 20-25 nodes), due to its efficient use of memory and simpler computation.
+        \item Easier to implement: Dynamic programming is generally easier to implement than branch and bound, as it requires fewer steps and less complex code.
+    \end{itemize}
+Disadvantages of dynamic programming
+    \begin{itemize}
+        \item Memory requirements: Dynamic programming requires a large amount of memory to store intermediate results, which can be a challenge for large instances of the TSP.
+        \item Inefficient for large instances: Dynamic programming can be inefficient for large instances of the TSP (more than 25 nodes), as the number of sub-problems grows exponentially with the size of the problem. This can lead to very long computation times.
+        \item Not suitable for asymmetric TSP: Dynamic programming is only suitable for symmetric TSP, where the distance between two nodes is the same in both directions.
+    \end{itemize}
+Advantages of Branch & bound
+    \begin{itemize}
+        \item Good for large instances: Branch and bound is generally better suited for large instances of the TSP, as it uses a systematic search process to explore the solution space and can prune large parts of the search tree, leading to faster computation times.
+        \item Suitable for asymmetric TSP: Branch and bound can be used to solve both symmetric and asymmetric TSP.
+        \item Can handle constraints: Branch and bound can be extended to handle additional constraints, such as time windows or capacity limits.
+    \end{itemize}
+Disadvantages for Branch \& Bound 
+    \begin{itemize}
+        \item No guarantee of optimality: Branch and bound does not guarantee that the solution found is optimal, as it relies on heuristics to prune the search tree and may miss the global minimum.
+        \item More complex implementation: Branch and bound requires more complex implementation than dynamic programming, due to the need to handle branching and pruning of the search tree.
+        \item Higher computation time for small instances: Branch and bound may take longer to solve small instances of the TSP due to the overhead of branching and pruning the search tree.
+    \end{itemize}
+\item Dynamic program  is well suited for the bus route optimisation and hence it was chosen.
+\item Requirement for solving any type of TSP is to create a distance matrix, which involves distance from each stop to other stop. The matrix was calculated using google maps where all the addresses that the bus covered were plotted and distances were provided by google maps. 
+\item I learned linear programming from youtube videos. Solved an example and tried to apply it to the distance matrix. However soon i realised that using dynamic programming with 15 stops would be very large to calculated by hand. 
+\item Solution to the problem is that i can cluster the 15 stops into smaller groups and then calculate the shortest path using dynamic programming for each cluster and then connecting all the clusetrs to get the final optimised route.
+\item Next problem is how to cluster. Hence the method of clustering i found is K means clustering algorithm which helps to form clusters.
+
+    
+\end{enumerate}
+\section{Procedure to follow}
+\begin{enumerate}
+    \item Construct a distance matrix
+    \item Cluster the stops into 3 groups using k means clustering method
+    \item Apply dynamic programming to the clusters and identify the best route
+    \item Connect the clusters and the school vertex
+    \item Get the optimised route
+    \end{enumerate}
+
+
+\end{document}

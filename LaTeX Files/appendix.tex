@@ -1,0 +1,309 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{chemfig}
+\usepackage{wrapfig}
+\usepackage[margin = 0.7in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[document]{ragged2e}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage{varioref}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\useunder{\uline}{\ul}{}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{tabularray}
+\usepackage[utf8]{inputenc}
+\renewcommand*\thesection{\arabic{section}.0}
+\renewcommand*\thesubsection{\arabic{section}.\arabic{subsection}0}
+
+\begin{document}
+
+\begin{center}
+    {\bf APPENDIX}
+  \end{center}
+\appendix 
+
+\section{k-means clustering}
+All the iterations done during the calculation of k-means clustering are presented here.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|cc|cc|cc|}
+\hline
+\multicolumn{2}{|c|}{\textbf{C1}} & \multicolumn{2}{c|}{\textbf{C2}} & \multicolumn{2}{c|}{\textbf{C3}} \\ \hline
+\multicolumn{1}{|c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} \\ \hline
+\multicolumn{1}{|c|}{22.28815022} & 70.78148298 & \multicolumn{1}{c|}{22.28659521} & 70.78433731 & \multicolumn{1}{c|}{22.28498171} & 70.78434266 \\ \hline
+\end{tabular}
+\caption{Iteration 1}
+\label{tab:Iteration 1}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|cc|ccc|c|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Co-ordinates}} & \multicolumn{3}{c|}{\textbf{Distances}} &  \\ \cline{2-6}
+\multirow{-2}{*}{\textbf{Stops}} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{C1}} & \multicolumn{1}{c|}{\textbf{C2}} & \textbf{C3} & \multirow{-2}{*}{\textbf{Cluster}} \\ \hline
+1 & \multicolumn{1}{c|}{22.28822779} & 70.7602492 & \multicolumn{1}{c|}{0.021233922} & \multicolumn{1}{c|}{0.024143369} & 0.02431115 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 2} & \multicolumn{1}{c|}{22.29037206} & 70.78024775 & \multicolumn{1}{c|}{0.002542119} & \multicolumn{1}{c|}{0.005566785} & 0.006769352 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+3 & \multicolumn{1}{c|}{22.28906167} & 70.77968985 & \multicolumn{1}{c|}{0.002011484} & \multicolumn{1}{c|}{0.0052614} & 0.006188274 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 4} & \multicolumn{1}{c|}{22.28691738} & 70.77999026 & \multicolumn{1}{c|}{0.001936002} & \multicolumn{1}{c|}{0.004358973} & 0.004763428 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+5 & \multicolumn{1}{c|}{22.28648058} & 70.78153521 & \multicolumn{1}{c|}{0.001670457} & \multicolumn{1}{c|}{0.002804441} & 0.003182513 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 6} & \multicolumn{1}{c|}{22.28635036} & 70.78251657 & \multicolumn{1}{c|}{0.002075527} & \multicolumn{1}{c|}{0.001837123} & 0.002282058 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+7 & \multicolumn{1}{c|}{22.28703269} & 70.78407489 & \multicolumn{1}{c|}{0.002822568} & \multicolumn{1}{c|}{0.00051015} & 0.002068381 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 8} & \multicolumn{1}{c|}{22.28743179} & 70.7855219 & \multicolumn{1}{c|}{0.004102325} & \multicolumn{1}{c|}{0.001450223} & 0.002719095 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+9 & \multicolumn{1}{c|}{22.28632461} & 70.78504884 & \multicolumn{1}{c|}{0.004006025} & \multicolumn{1}{c|}{0.000761254} & 0.001517253 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 10} & \multicolumn{1}{c|}{22.28598988} & 70.78617584 & \multicolumn{1}{c|}{0.005166241} & \multicolumn{1}{c|}{0.001935624} & 0.002092115 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+11 & \multicolumn{1}{c|}{22.28535904} & 70.78716371 & \multicolumn{1}{c|}{0.006329405} & \multicolumn{1}{c|}{0.003084908} & 0.002846167 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 12} & \multicolumn{1}{c|}{22.28481832} & 70.78557756 & \multicolumn{1}{c|}{0.005278936} & \multicolumn{1}{c|}{0.002166926} & 0.001245661 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+13 & \multicolumn{1}{c|}{22.28395573} & 70.78460361 & \multicolumn{1}{c|}{0.005228008} & \multicolumn{1}{c|}{0.002652876} & 0.00105865 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 14} & \multicolumn{1}{c|}{22.28367249} & 70.78447839 & \multicolumn{1}{c|}{0.005387254} & \multicolumn{1}{c|}{0.002926118} & 0.00131624 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+15 & \multicolumn{1}{c|}{22.28297727} & 70.78432534 & \multicolumn{1}{c|}{0.005902408} & \multicolumn{1}{c|}{0.003617958} & 0.002004522 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+\end{tabular}
+\caption{k-means iteration - 1}
+\label{tab:k-means Table 1}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|cc|cc|cc|}
+\hline
+\multicolumn{2}{|c|}{\textbf{C1}} & \multicolumn{2}{c|}{\textbf{C2}} & \multicolumn{2}{c|}{\textbf{C3}} \\ \hline
+\multicolumn{1}{|c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} \\ \hline
+\multicolumn{1}{|c|}{22.2882119} & 70.77634245 & \multicolumn{1}{c|}{22.28662586} & 70.78466761 & \multicolumn{1}{c|}{22.28415657} & 70.78522972 \\ \hline
+\end{tabular}
+\caption{Iteration - 2}
+\label{tab:Iteration - 2}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|cc|ccc|c|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Stops}} & \multicolumn{3}{c|}{\textbf{Distances}} &  \\ \cline{2-6}
+\multirow{-2}{*}{\textbf{Stops}} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{C1}} & \multicolumn{1}{c|}{\textbf{C2}} & \textbf{C3} & \multirow{-2}{*}{\textbf{Cluster}} \\ \hline
+1 & \multicolumn{1}{c|}{22.28822779} & 70.7602492 & \multicolumn{1}{c|}{0.014800938} & \multicolumn{1}{c|}{0.023951611} & 0.025310103 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 2} & \multicolumn{1}{c|}{22.29037206} & 70.78024775 & \multicolumn{1}{c|}{0.005482695} & \multicolumn{1}{c|}{0.005422987} & 0.007965699 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+3 & \multicolumn{1}{c|}{22.28906167} & 70.77968985 & \multicolumn{1}{c|}{0.004664259} & \multicolumn{1}{c|}{0.005089689} & 0.00739934 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 4} & \multicolumn{1}{c|}{22.28691738} & 70.77999026 & \multicolumn{1}{c|}{0.005238947} & \multicolumn{1}{c|}{0.004167266} & 0.005922337 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+5 & \multicolumn{1}{c|}{22.28648058} & 70.78153521 & \multicolumn{1}{c|}{0.006842215} & \multicolumn{1}{c|}{0.002613142} & 0.004364681 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 6} & \multicolumn{1}{c|}{22.28635036} & 70.78251657 & \multicolumn{1}{c|}{0.007816619} & \multicolumn{1}{c|}{0.001648241} & 0.003489109 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+7 & \multicolumn{1}{c|}{22.28703269} & 70.78407489 & \multicolumn{1}{c|}{0.009173382} & \multicolumn{1}{c|}{0.000436792} & 0.003099307 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 8} & \multicolumn{1}{c|}{22.28743179} & 70.7855219 & \multicolumn{1}{c|}{0.010547616} & \multicolumn{1}{c|}{0.001607327} & 0.003288228 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+9 & \multicolumn{1}{c|}{22.28632461} & 70.78504884 & \multicolumn{1}{c|}{0.010270082} & \multicolumn{1}{c|}{0.000944829} & 0.002175573 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 10} & \multicolumn{1}{c|}{22.28598988} & 70.78617584 & \multicolumn{1}{c|}{0.011443789} & \multicolumn{1}{c|}{0.002120467} & 0.00206305 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+11 & \multicolumn{1}{c|}{22.28535904} & 70.78716371 & \multicolumn{1}{c|}{0.012556938} & \multicolumn{1}{c|}{0.003263954} & 0.002277332 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 12} & \multicolumn{1}{c|}{22.28481832} & 70.78557756 & \multicolumn{1}{c|}{0.011206773} & \multicolumn{1}{c|}{0.002287128} & 0.000747597 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+13 & \multicolumn{1}{c|}{22.28395573} & 70.78460361 & \multicolumn{1}{c|}{0.010647431} & \multicolumn{1}{c|}{0.002685279} & 0.000657534 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 14} & \multicolumn{1}{c|}{22.28367249} & 70.78447839 & \multicolumn{1}{c|}{0.01066423} & \multicolumn{1}{c|}{0.002948009} & 0.000893774 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+15 & \multicolumn{1}{c|}{22.28297727} & 70.78432534 & \multicolumn{1}{c|}{0.010874669} & \multicolumn{1}{c|}{0.00362884} & 0.001486156 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+\end{tabular}
+\caption{k-means iteration - 2}
+\label{tab:k-means iteration - 2}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|cc|cc|cc|}
+\hline
+\multicolumn{2}{|c|}{\textbf{C1}} & \multicolumn{2}{c|}{\textbf{C2}} & \multicolumn{2}{c|}{\textbf{C3}} \\ \hline
+\multicolumn{1}{|c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} \\ \hline
+\multicolumn{1}{|c|}{22.28864472} & 70.77504426 & \multicolumn{1}{c|}{22.28660165} & 70.78414554 & \multicolumn{1}{c|}{22.28415657} & 70.78522972 \\ \hline
+\end{tabular}
+\caption{Iteration - 3}
+\label{tab:Iteration - 3}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|cc|ccc|c|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Stops}} & \multicolumn{3}{c|}{\textbf{Distances}} &  \\ \cline{2-6}
+\multirow{-2}{*}{\textbf{Stops}} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{C1}} & \multicolumn{1}{c|}{\textbf{C2}} & \textbf{C3} & \multirow{-2}{*}{\textbf{Cluster}} \\ \hline
+1 & \multicolumn{1}{c|}{22.28822779} & 70.7602492 & \multicolumn{1}{c|}{0.014800938} & \multicolumn{1}{c|}{0.023951611} & 0.025310103 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 2} & \multicolumn{1}{c|}{22.29037206} & 70.78024775 & \multicolumn{1}{c|}{0.005482695} & \multicolumn{1}{c|}{0.005422987} & 0.007965699 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+3 & \multicolumn{1}{c|}{22.28906167} & 70.77968985 & \multicolumn{1}{c|}{0.004664259} & \multicolumn{1}{c|}{0.005089689} & 0.00739934 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 4} & \multicolumn{1}{c|}{22.28691738} & 70.77999026 & \multicolumn{1}{c|}{0.005238947} & \multicolumn{1}{c|}{0.004167266} & 0.005922337 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+5 & \multicolumn{1}{c|}{22.28648058} & 70.78153521 & \multicolumn{1}{c|}{0.006842215} & \multicolumn{1}{c|}{0.002613142} & 0.004364681 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 6} & \multicolumn{1}{c|}{22.28635036} & 70.78251657 & \multicolumn{1}{c|}{0.007816619} & \multicolumn{1}{c|}{0.001648241} & 0.003489109 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+7 & \multicolumn{1}{c|}{22.28703269} & 70.78407489 & \multicolumn{1}{c|}{0.009173382} & \multicolumn{1}{c|}{0.000436792} & 0.003099307 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 8} & \multicolumn{1}{c|}{22.28743179} & 70.7855219 & \multicolumn{1}{c|}{0.010547616} & \multicolumn{1}{c|}{0.001607327} & 0.003288228 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+9 & \multicolumn{1}{c|}{22.28632461} & 70.78504884 & \multicolumn{1}{c|}{0.010270082} & \multicolumn{1}{c|}{0.000944829} & 0.002175573 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 10} & \multicolumn{1}{c|}{22.28598988} & 70.78617584 & \multicolumn{1}{c|}{0.011443789} & \multicolumn{1}{c|}{0.002120467} & 0.00206305 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+11 & \multicolumn{1}{c|}{22.28535904} & 70.78716371 & \multicolumn{1}{c|}{0.012556938} & \multicolumn{1}{c|}{0.003263954} & 0.002277332 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 12} & \multicolumn{1}{c|}{22.28481832} & 70.78557756 & \multicolumn{1}{c|}{0.011206773} & \multicolumn{1}{c|}{0.002287128} & 0.000747597 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+13 & \multicolumn{1}{c|}{22.28395573} & 70.78460361 & \multicolumn{1}{c|}{0.010647431} & \multicolumn{1}{c|}{0.002685279} & 0.000657534 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 14} & \multicolumn{1}{c|}{22.28367249} & 70.78447839 & \multicolumn{1}{c|}{0.01066423} & \multicolumn{1}{c|}{0.002948009} & 0.000893774 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+15 & \multicolumn{1}{c|}{22.28297727} & 70.78432534 & \multicolumn{1}{c|}{0.010874669} & \multicolumn{1}{c|}{0.00362884} & 0.001486156 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+\end{tabular}
+\caption{k-means iteration - 3}
+\label{tab:k-means iteration - 3}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|cc|cc|cc|}
+\hline
+\multicolumn{2}{|c|}{\textbf{C1}} & \multicolumn{2}{c|}{\textbf{C2}} & \multicolumn{2}{c|}{\textbf{C3}} \\ \hline
+\multicolumn{1}{|c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} \\ \hline
+\multicolumn{1}{|c|}{22.28864473} & 70.76996952 & \multicolumn{1}{c|}{22.28727278} & 70.78270506 & \multicolumn{1}{c|}{22.28446212} & 70.78538741 \\ \hline
+\end{tabular}
+\caption{Iteration - 4}
+\label{tab: Iteration - 4}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|cc|ccc|c|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Stops}} & \multicolumn{3}{c|}{\textbf{Distances}} &  \\ \cline{2-6}
+\multirow{-2}{*}{\textbf{Stops}} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{C1}} & \multicolumn{1}{c|}{\textbf{C2}} & \textbf{C3} & \multirow{-2}{*}{\textbf{Cluster}} \\ \hline
+1 & \multicolumn{1}{c|}{22.28822779} & 70.7602492 & \multicolumn{1}{c|}{0.009729263} & \multicolumn{1}{c|}{0.022476161} & 0.02541869 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 2} & \multicolumn{1}{c|}{22.29037206} & 70.78024775 & \multicolumn{1}{c|}{0.010422359} & \multicolumn{1}{c|}{0.003955238} & 0.007832207 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+3 & \multicolumn{1}{c|}{22.28906167} & 70.77968985 & \multicolumn{1}{c|}{0.009729263} & \multicolumn{1}{c|}{0.003505944} & 0.007322436 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 4} & \multicolumn{1}{c|}{22.28691738} & 70.77999026 & \multicolumn{1}{c|}{0.010168521} & \multicolumn{1}{c|}{0.002737969} & 0.005929381 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+5 & \multicolumn{1}{c|}{22.28648058} & 70.78153521 & \multicolumn{1}{c|}{0.011766419} & \multicolumn{1}{c|}{0.001412848} & 0.004348978 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 6} & \multicolumn{1}{c|}{22.28635036} & 70.78251657 & \multicolumn{1}{c|}{0.0127551} & \multicolumn{1}{c|}{0.000941484} & 0.003436151 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+7 & \multicolumn{1}{c|}{22.28703269} & 70.78407489 & \multicolumn{1}{c|}{0.014197187} & \multicolumn{1}{c|}{0.001390713} & 0.002886265 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 8} & \multicolumn{1}{c|}{22.28743179} & 70.7855219 & \multicolumn{1}{c|}{0.015599609} & \multicolumn{1}{c|}{0.002821329} & 0.002972713 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+9 & \multicolumn{1}{c|}{22.28632461} & 70.78504884 & \multicolumn{1}{c|}{0.015256764} & \multicolumn{1}{c|}{0.002528309} & 0.001893011 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 10} & \multicolumn{1}{c|}{22.28598988} & 70.78617584 & \multicolumn{1}{c|}{0.016422334} & \multicolumn{1}{c|}{0.003700293} & 0.001719208 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+11 & \multicolumn{1}{c|}{22.28535904} & 70.78716371 & \multicolumn{1}{c|}{0.017505306} & \multicolumn{1}{c|}{0.004852004} & 0.001989901 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 12} & \multicolumn{1}{c|}{22.28481832} & 70.78557756 & \multicolumn{1}{c|}{0.016070229} & \multicolumn{1}{c|}{0.003778313} & 0.000403773 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+13 & \multicolumn{1}{c|}{22.28395573} & 70.78460361 & \multicolumn{1}{c|}{0.015366951} & \multicolumn{1}{c|}{0.003821952} & 0.000933151 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 14} & \multicolumn{1}{c|}{22.28367249} & 70.78447839 & \multicolumn{1}{c|}{0.015337219} & \multicolumn{1}{c|}{0.004013324} & 0.00120409 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+15 & \multicolumn{1}{c|}{22.28297727} & 70.78432534 & \multicolumn{1}{c|}{0.015434038} & \multicolumn{1}{c|}{0.00459094} & 0.00182559 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+\end{tabular}
+\caption{k-means iteration - 4}
+\label{tab:k-means iteration - 4}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|cc|cc|cc|}
+\hline
+\multicolumn{2}{|c|}{\textbf{C1}} & \multicolumn{2}{c|}{\textbf{C2}} & \multicolumn{2}{c|}{\textbf{C3}} \\ \hline
+\multicolumn{1}{|c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} \\ \hline
+\multicolumn{1}{|c|}{22.28822779} & 70.7602492 & \multicolumn{1}{c|}{22.28766379} & 70.78193949 & \multicolumn{1}{c|}{22.28472819} & 70.78533904 \\ \hline
+\end{tabular}
+\caption{Iteration - 5}
+\label{tab: Iteration - 5}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|cc|ccc|c|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Stops}} & \multicolumn{3}{c|}{\textbf{Distances}} &  \\ \cline{2-6}
+\multirow{-2}{*}{\textbf{Stops}} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{C1}} & \multicolumn{1}{c|}{\textbf{C2}} & \textbf{C3} & \multirow{-2}{*}{\textbf{Cluster}} \\ \hline
+1 & \multicolumn{1}{c|}{22.28822779} & 70.7602492 & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0.021697624} & 0.025332734 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 2} & \multicolumn{1}{c|}{22.29037206} & 70.78024775 & \multicolumn{1}{c|}{0.020113177} & \multicolumn{1}{c|}{0.003193228} & 0.007600955 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+3 & \multicolumn{1}{c|}{22.28906167} & 70.77968985 & \multicolumn{1}{c|}{0.019458527} & \multicolumn{1}{c|}{0.002648578} & 0.007119864 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 4} & \multicolumn{1}{c|}{22.28691738} & 70.77999026 & \multicolumn{1}{c|}{0.019784502} & \multicolumn{1}{c|}{0.002087256} & 0.005779452 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+5 & \multicolumn{1}{c|}{22.28648058} & 70.78153521 & \multicolumn{1}{c|}{0.021357598} & \multicolumn{1}{c|}{0.001250374} & 0.004188079 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 6} & \multicolumn{1}{c|}{22.28635036} & 70.78251657 & \multicolumn{1}{c|}{0.02234638} & \multicolumn{1}{c|}{0.001434618} & 0.00325542 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+7 & \multicolumn{1}{c|}{22.28703269} & 70.78407489 & \multicolumn{1}{c|}{0.023855649} & \multicolumn{1}{c|}{0.002226709} & 0.002628458 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 8} & \multicolumn{1}{c|}{22.28743179} & 70.7855219 & \multicolumn{1}{c|}{0.025285239} & \multicolumn{1}{c|}{0.003589919} & 0.002709777 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+9 & \multicolumn{1}{c|}{22.28632461} & 70.78504884 & \multicolumn{1}{c|}{0.024872565} & \multicolumn{1}{c|}{0.003385481} & 0.001622581 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 10} & \multicolumn{1}{c|}{22.28598988} & 70.78617584 & \multicolumn{1}{c|}{0.026023051} & \multicolumn{1}{c|}{0.00455507} & 0.001513967 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+11 & \multicolumn{1}{c|}{22.28535904} & 70.78716371 & \multicolumn{1}{c|}{0.027066964} & \multicolumn{1}{c|}{0.00571002} & 0.001930642 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 12} & \multicolumn{1}{c|}{22.28481832} & 70.78557756 & \multicolumn{1}{c|}{0.025556807} & \multicolumn{1}{c|}{0.004618687} & 0.000254978 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+13 & \multicolumn{1}{c|}{22.28395573} & 70.78460361 & \multicolumn{1}{c|}{0.024726258} & \multicolumn{1}{c|}{0.004565878} & 0.001066562 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 14} & \multicolumn{1}{c|}{22.28367249} & 70.78447839 & \multicolumn{1}{c|}{0.024653688} & \multicolumn{1}{c|}{0.004730377} & 0.001362067 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+15 & \multicolumn{1}{c|}{22.28297727} & 70.78432534 & \multicolumn{1}{c|}{0.024642006} & \multicolumn{1}{c|}{0.005258874} & 0.002023197 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+\end{tabular}
+\caption{k-means iteration - 5}
+\label{tab:k-means iteration - 5}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|cc|cc|cc|}
+\hline
+\multicolumn{2}{|c|}{\textbf{C1}} & \multicolumn{2}{c|}{\textbf{C2}} & \multicolumn{2}{c|}{\textbf{C3}} \\ \hline
+\multicolumn{1}{|c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} \\ \hline
+\multicolumn{1}{|c|}{22.28822779} & 70.7602492 & \multicolumn{1}{c|}{22.28770246} & 70.78134242 & \multicolumn{1}{c|}{22.28506614} & 70.7853619 \\ \hline
+\end{tabular}
+\caption{Iteration - 6}
+\label{tab: Iteration - 6}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|cc|ccc|c|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Stops}} & \multicolumn{3}{c|}{\textbf{Distances}} &  \\ \cline{2-6}
+\multirow{-2}{*}{\textbf{Stops}} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{C1}} & \multicolumn{1}{c|}{\textbf{C2}} & \textbf{C3} & \multirow{-2}{*}{\textbf{Cluster}} \\ \hline
+1 & \multicolumn{1}{c|}{22.28822779} & 70.7602492 & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0.021099764} & 0.025310942 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 2} & \multicolumn{1}{c|}{22.29037206} & 70.78024775 & \multicolumn{1}{c|}{0.020113177} & \multicolumn{1}{c|}{0.002885322} & 0.007369349 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+3 & \multicolumn{1}{c|}{22.28906167} & 70.77968985 & \multicolumn{1}{c|}{0.019458527} & \multicolumn{1}{c|}{0.002139735} & 0.006938044 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 4} & \multicolumn{1}{c|}{22.28691738} & 70.77999026 & \multicolumn{1}{c|}{0.019784502} & \multicolumn{1}{c|}{0.001563551} & 0.005681694 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+5 & \multicolumn{1}{c|}{22.28648058} & 70.78153521 & \multicolumn{1}{c|}{0.021357598} & \multicolumn{1}{c|}{0.001236994} & 0.00407973 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 6} & \multicolumn{1}{c|}{22.28635036} & 70.78251657 & \multicolumn{1}{c|}{0.02234638} & \multicolumn{1}{c|}{0.001790755} & 0.003121714 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+7 & \multicolumn{1}{c|}{22.28703269} & 70.78407489 & \multicolumn{1}{c|}{0.023855649} & \multicolumn{1}{c|}{0.002813359} & 0.002350257 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 8} & \multicolumn{1}{c|}{22.28743179} & 70.7855219 & \multicolumn{1}{c|}{0.025285239} & \multicolumn{1}{c|}{0.004188239} & 0.002371054 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+9 & \multicolumn{1}{c|}{22.28632461} & 70.78504884 & \multicolumn{1}{c|}{0.024872565} & \multicolumn{1}{c|}{0.003954242} & 0.001296823 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 10} & \multicolumn{1}{c|}{22.28598988} & 70.78617584 & \multicolumn{1}{c|}{0.026023051} & \multicolumn{1}{c|}{0.005127855} & 0.001231178 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+11 & \multicolumn{1}{c|}{22.28535904} & 70.78716371 & \multicolumn{1}{c|}{0.027066964} & \multicolumn{1}{c|}{0.006275268} & 0.00182546 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 12} & \multicolumn{1}{c|}{22.28481832} & 70.78557756 & \multicolumn{1}{c|}{0.025556807} & \multicolumn{1}{c|}{0.005123931} & 0.000328522 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+13 & \multicolumn{1}{c|}{22.28395573} & 70.78460361 & \multicolumn{1}{c|}{0.024726258} & \multicolumn{1}{c|}{0.004967224} & 0.001344624 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 14} & \multicolumn{1}{c|}{22.28367249} & 70.78447839 & \multicolumn{1}{c|}{0.024653688} & \multicolumn{1}{c|}{0.005106359} & 0.001650106 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+15 & \multicolumn{1}{c|}{22.28297727} & 70.78432534 & \multicolumn{1}{c|}{0.024642006} & \multicolumn{1}{c|}{0.005587952} & 0.002331919 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+\end{tabular}
+\caption{k-means iteration - 6}
+\label{tab:k-means iteration - 6}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|cc|cc|cc|}
+\hline
+\multicolumn{2}{|c|}{\textbf{C1}} & \multicolumn{2}{c|}{\textbf{C2}} & \multicolumn{2}{c|}{\textbf{C3}} \\ \hline
+\multicolumn{1}{|c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} \\ \hline
+\multicolumn{1}{|c|}{22.28822779} & 70.7602492 & \multicolumn{1}{c|}{22.28783641} & 70.78079593 & \multicolumn{1}{c|}{22.28528465} & 70.7852189 \\ \hline
+\end{tabular}
+\caption{Iteration - 7}
+\label{tab: Iteration - 7}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|cc|ccc|c|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Stops}} & \multicolumn{3}{c|}{\textbf{Distances}} &  \\ \cline{2-6}
+\multirow{-2}{*}{\textbf{Stops}} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{C1}} & \multicolumn{1}{c|}{\textbf{C2}} & \textbf{C3} & \multirow{-2}{*}{\textbf{Cluster}} \\ \hline
+1 & \multicolumn{1}{c|}{22.28822779} & 70.7602492 & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0.020550456} & 0.025142554 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 2} & \multicolumn{1}{c|}{22.29037206} & 70.78024775 & \multicolumn{1}{c|}{0.020113177} & \multicolumn{1}{c|}{0.002594227} & 0.007112953 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+3 & \multicolumn{1}{c|}{22.28906167} & 70.77968985 & \multicolumn{1}{c|}{0.019458527} & \multicolumn{1}{c|}{0.001650661} & 0.006695994 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 4} & \multicolumn{1}{c|}{22.28691738} & 70.77999026 & \multicolumn{1}{c|}{0.019784502} & \multicolumn{1}{c|}{0.001222177} & 0.005477639 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+5 & \multicolumn{1}{c|}{22.28648058} & 70.78153521 & \multicolumn{1}{c|}{0.021357598} & \multicolumn{1}{c|}{0.001544286} & 0.003872961 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 6} & \multicolumn{1}{c|}{22.28635036} & 70.78251657 & \multicolumn{1}{c|}{0.02234638} & \multicolumn{1}{c|}{0.002273538} & 0.002904877 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+7 & \multicolumn{1}{c|}{22.28703269} & 70.78407489 & \multicolumn{1}{c|}{0.023855649} & \multicolumn{1}{c|}{0.003376031} & 0.002089117 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 8} & \multicolumn{1}{c|}{22.28743179} & 70.7855219 & \multicolumn{1}{c|}{0.025285239} & \multicolumn{1}{c|}{0.004743268} & 0.002168419 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+9 & \multicolumn{1}{c|}{22.28632461} & 70.78504884 & \multicolumn{1}{c|}{0.024872565} & \multicolumn{1}{c|}{0.004513629} & 0.001053776 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 10} & \multicolumn{1}{c|}{22.28598988} & 70.78617584 & \multicolumn{1}{c|}{0.026023051} & \multicolumn{1}{c|}{0.005687986} & 0.001188738 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+11 & \multicolumn{1}{c|}{22.28535904} & 70.78716371 & \multicolumn{1}{c|}{0.027066964} & \multicolumn{1}{c|}{0.006832716} & 0.001946231 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 12} & \multicolumn{1}{c|}{22.28481832} & 70.78557756 & \multicolumn{1}{c|}{0.025556807} & \multicolumn{1}{c|}{0.005654459} & 0.000588304 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+13 & \multicolumn{1}{c|}{22.28395573} & 70.78460361 & \multicolumn{1}{c|}{0.024726258} & \multicolumn{1}{c|}{0.005436739} & 0.001464445 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 14} & \multicolumn{1}{c|}{22.28367249} & 70.78447839 & \multicolumn{1}{c|}{0.024653688} & \multicolumn{1}{c|}{0.005558663} & 0.001774091 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+15 & \multicolumn{1}{c|}{22.28297727} & 70.78432534 & \multicolumn{1}{c|}{0.024642006} & \multicolumn{1}{c|}{0.006005665} & 0.002474357 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+\end{tabular}
+\caption{k-means iteration - 7}
+\label{tab:k-means iteration - 7}
+\end{table}
+
+
+
+
+
+\end{document}

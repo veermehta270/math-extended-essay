@@ -1,0 +1,161 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{chemfig}
+\usepackage{wrapfig}
+\usepackage[margin = 0.7in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[document]{ragged2e}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage{varioref}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\useunder{\uline}{\ul}{}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{tabularray}
+\usepackage[utf8]{inputenc}
+\renewcommand*\thesection{\arabic{section}.0}
+\renewcommand*\thesubsection{\arabic{section}.\arabic{subsection}0}
+
+\begin{document}
+\noindent Due to high number of stops in the bus route using dynamic programming would lead to very long computational time as the number of sub-problems grows exponentially with the number of stops. Hence the stops were classified into 3 major clusters. So that the dynamic programming can be performed in each small cluster and with reduced complexity.
+
+\section{Dividing the stops into 3 different clusters}
+
+\subsection{K-means clustering algorithm}
+\noindent K-means clustering algorithm, "\textit{It is an iterative algorithm that divides the unlabeled dataset into k different clusters in such a way that each dataset belongs only one group that has similar properties.}"\footnote{https://www.javatpoint.com/k-means-clustering-algorithm-in-machine-learning} Distance based measurements are used to identify the similarities between the data points. 
+\\
+
+\noindent The algorithm involves defining the value of "k" the number of clusters to be formed by the user. After number of clusters is decided the algorithm randomly selects "k" number of centroids. Using the Euclidean distance formula each data set is associated with a cluster. This process of associating the data set with a cluster is repeated until optimum solution is found.
+
+\section{Process of k-means algorithm}
+\begin{enumerate}
+    \item Each stop was given a co-ordinate, this was done by the co-ordinate plotting system of Google Maps. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|cc|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Co-ordinates}} \\ \cline{2-3} 
+\multirow{-2}{*}{\textbf{Stops}} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} \\ \hline
+\textbf{1} & \multicolumn{1}{c|}{22.28822779} & 70.7602492 \\ \hline
+{\color[HTML]{3C4043} \textbf{2}} & \multicolumn{1}{c|}{22.29037206} & 70.78024775 \\ \hline
+\textbf{3} & \multicolumn{1}{c|}{22.28906167} & 70.77968985 \\ \hline
+{\color[HTML]{3C4043} \textbf{4}} & \multicolumn{1}{c|}{22.28691738} & 70.77999026 \\ \hline
+\textbf{5} & \multicolumn{1}{c|}{22.28648058} & 70.78153521 \\ \hline
+{\color[HTML]{3C4043} \textbf{6}} & \multicolumn{1}{c|}{22.28635036} & 70.78251657 \\ \hline
+\textbf{7} & \multicolumn{1}{c|}{22.28703269} & 70.78407489 \\ \hline
+{\color[HTML]{3C4043} \textbf{8}} & \multicolumn{1}{c|}{22.28743179} & 70.7855219 \\ \hline
+\textbf{9} & \multicolumn{1}{c|}{22.28632461} & 70.78504884 \\ \hline
+{\color[HTML]{3C4043} \textbf{10}} & \multicolumn{1}{c|}{22.28598988} & 70.78617584 \\ \hline
+\textbf{11} & \multicolumn{1}{c|}{22.28535904} & 70.78716371 \\ \hline
+{\color[HTML]{3C4043} \textbf{12}} & \multicolumn{1}{c|}{22.28481832} & 70.78557756 \\ \hline
+\textbf{13} & \multicolumn{1}{c|}{22.28395573} & 70.78460361 \\ \hline
+{\color[HTML]{3C4043} \textbf{14}} & \multicolumn{1}{c|}{22.28367249} & 70.78447839 \\ \hline
+\textbf{15} & \multicolumn{1}{c|}{22.28297727} & 70.78432534 \\ \hline
+\end{tabular}
+\caption{Coordinates of stops}
+\label{tab:Coordinates of stops}
+\end{table}
+
+\item 3 random points (C1, C2, C3) were selected to be set as centroids.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|cc|cc|cc|}
+\hline
+\multicolumn{2}{|c|}{\textbf{C1}} & \multicolumn{2}{c|}{\textbf{C2}} & \multicolumn{2}{c|}{\textbf{C3}} \\ \hline
+\multicolumn{1}{|c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} \\ \hline
+\multicolumn{1}{|c|}{22.28815022} & 70.78148298 & \multicolumn{1}{c|}{22.28659521} & 70.78433731 & \multicolumn{1}{c|}{22.28498171} & 70.78434266 \\ \hline
+\end{tabular}
+\caption{Iteration 1}
+\label{tab:Iteration 1}
+\end{table}
+
+
+
+\item Distances of each point from the centroids were measured using the euclidian distance formula : $\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$. Each point was assigned to the centroid closest to it. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|cc|ccc|c|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Co-ordinates}} & \multicolumn{3}{c|}{\textbf{Distances}} &  \\ \cline{2-6}
+\multirow{-2}{*}{\textbf{Stops}} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{C1}} & \multicolumn{1}{c|}{\textbf{C2}} & \textbf{C3} & \multirow{-2}{*}{\textbf{Cluster}} \\ \hline
+1 & \multicolumn{1}{c|}{22.28822779} & 70.7602492 & \multicolumn{1}{c|}{0.021233922} & \multicolumn{1}{c|}{0.024143369} & 0.02431115 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 2} & \multicolumn{1}{c|}{22.29037206} & 70.78024775 & \multicolumn{1}{c|}{0.002542119} & \multicolumn{1}{c|}{0.005566785} & 0.006769352 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+3 & \multicolumn{1}{c|}{22.28906167} & 70.77968985 & \multicolumn{1}{c|}{0.002011484} & \multicolumn{1}{c|}{0.0052614} & 0.006188274 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 4} & \multicolumn{1}{c|}{22.28691738} & 70.77999026 & \multicolumn{1}{c|}{0.001936002} & \multicolumn{1}{c|}{0.004358973} & 0.004763428 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+5 & \multicolumn{1}{c|}{22.28648058} & 70.78153521 & \multicolumn{1}{c|}{0.001670457} & \multicolumn{1}{c|}{0.002804441} & 0.003182513 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 6} & \multicolumn{1}{c|}{22.28635036} & 70.78251657 & \multicolumn{1}{c|}{0.002075527} & \multicolumn{1}{c|}{0.001837123} & 0.002282058 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+7 & \multicolumn{1}{c|}{22.28703269} & 70.78407489 & \multicolumn{1}{c|}{0.002822568} & \multicolumn{1}{c|}{0.00051015} & 0.002068381 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 8} & \multicolumn{1}{c|}{22.28743179} & 70.7855219 & \multicolumn{1}{c|}{0.004102325} & \multicolumn{1}{c|}{0.001450223} & 0.002719095 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+9 & \multicolumn{1}{c|}{22.28632461} & 70.78504884 & \multicolumn{1}{c|}{0.004006025} & \multicolumn{1}{c|}{0.000761254} & 0.001517253 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 10} & \multicolumn{1}{c|}{22.28598988} & 70.78617584 & \multicolumn{1}{c|}{0.005166241} & \multicolumn{1}{c|}{0.001935624} & 0.002092115 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+11 & \multicolumn{1}{c|}{22.28535904} & 70.78716371 & \multicolumn{1}{c|}{0.006329405} & \multicolumn{1}{c|}{0.003084908} & 0.002846167 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 12} & \multicolumn{1}{c|}{22.28481832} & 70.78557756 & \multicolumn{1}{c|}{0.005278936} & \multicolumn{1}{c|}{0.002166926} & 0.001245661 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+13 & \multicolumn{1}{c|}{22.28395573} & 70.78460361 & \multicolumn{1}{c|}{0.005228008} & \multicolumn{1}{c|}{0.002652876} & 0.00105865 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 14} & \multicolumn{1}{c|}{22.28367249} & 70.78447839 & \multicolumn{1}{c|}{0.005387254} & \multicolumn{1}{c|}{0.002926118} & 0.00131624 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+15 & \multicolumn{1}{c|}{22.28297727} & 70.78432534 & \multicolumn{1}{c|}{0.005902408} & \multicolumn{1}{c|}{0.003617958} & 0.002004522 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+\end{tabular}
+\caption{k-means iteration - 1}
+\label{tab:k-means Table 1}
+\end{table}
+
+\item The new centroids were calculated. The x co-ordinate of new centroid is the average of all the x co-ordinates of stops assigned to that particular centroid.  The y co-ordinate of new centroid is the average of all the y co-ordinates of stops assigned to that particular centroid. This was done using 'Average' function in Microsoft Excel spread sheet. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|cc|cc|cc|}
+\hline
+\multicolumn{2}{|c|}{\textbf{C1}} & \multicolumn{2}{c|}{\textbf{C2}} & \multicolumn{2}{c|}{\textbf{C3}} \\ \hline
+\multicolumn{1}{|c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} \\ \hline
+\multicolumn{1}{|c|}{22.2882119} & 70.77634245 & \multicolumn{1}{c|}{22.28662586} & 70.78466761 & \multicolumn{1}{c|}{22.28415657} & 70.78522972 \\ \hline
+\end{tabular}
+\caption{Iteration 2}
+\label{tab:Iteration 2}
+\end{table}
+
+\item Now the distance of each stop from new centroids is calculated using the Euclidean distance formula. Each point is assigned to the centroid closest to it.
+
+\item The new cluster is compared to the old cluster. If there is no change, the cluster is optimum. If there is a change, steps 4 and 5 needs to be repeated.
+\end{enumerate}
+
+The calculations of all other iterations are given in appendix. The final solution provided by the k-means algorithms is shown in the table \ref{tab:k-means iteration - 7}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|cc|ccc|c|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Stops}} & \multicolumn{3}{c|}{\textbf{Distances}} &  \\ \cline{2-6}
+\multirow{-2}{*}{\textbf{Stops}} & \multicolumn{1}{c|}{\textbf{X}} & \textbf{Y} & \multicolumn{1}{c|}{\textbf{C1}} & \multicolumn{1}{c|}{\textbf{C2}} & \textbf{C3} & \multirow{-2}{*}{\textbf{Cluster}} \\ \hline
+1 & \multicolumn{1}{c|}{22.28822779} & 70.7602492 & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0.020550456} & 0.025142554 & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C0006} C1} \\ \hline
+{\color[HTML]{3C4043} 2} & \multicolumn{1}{c|}{22.29037206} & 70.78024775 & \multicolumn{1}{c|}{0.020113177} & \multicolumn{1}{c|}{0.002594227} & 0.007112953 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+3 & \multicolumn{1}{c|}{22.28906167} & 70.77968985 & \multicolumn{1}{c|}{0.019458527} & \multicolumn{1}{c|}{0.001650661} & 0.006695994 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 4} & \multicolumn{1}{c|}{22.28691738} & 70.77999026 & \multicolumn{1}{c|}{0.019784502} & \multicolumn{1}{c|}{0.001222177} & 0.005477639 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+5 & \multicolumn{1}{c|}{22.28648058} & 70.78153521 & \multicolumn{1}{c|}{0.021357598} & \multicolumn{1}{c|}{0.001544286} & 0.003872961 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+{\color[HTML]{3C4043} 6} & \multicolumn{1}{c|}{22.28635036} & 70.78251657 & \multicolumn{1}{c|}{0.02234638} & \multicolumn{1}{c|}{0.002273538} & 0.002904877 & \cellcolor[HTML]{FFEB9C}{\color[HTML]{9C6500} C2} \\ \hline
+7 & \multicolumn{1}{c|}{22.28703269} & 70.78407489 & \multicolumn{1}{c|}{0.023855649} & \multicolumn{1}{c|}{0.003376031} & 0.002089117 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 8} & \multicolumn{1}{c|}{22.28743179} & 70.7855219 & \multicolumn{1}{c|}{0.025285239} & \multicolumn{1}{c|}{0.004743268} & 0.002168419 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+9 & \multicolumn{1}{c|}{22.28632461} & 70.78504884 & \multicolumn{1}{c|}{0.024872565} & \multicolumn{1}{c|}{0.004513629} & 0.001053776 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 10} & \multicolumn{1}{c|}{22.28598988} & 70.78617584 & \multicolumn{1}{c|}{0.026023051} & \multicolumn{1}{c|}{0.005687986} & 0.001188738 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+11 & \multicolumn{1}{c|}{22.28535904} & 70.78716371 & \multicolumn{1}{c|}{0.027066964} & \multicolumn{1}{c|}{0.006832716} & 0.001946231 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 12} & \multicolumn{1}{c|}{22.28481832} & 70.78557756 & \multicolumn{1}{c|}{0.025556807} & \multicolumn{1}{c|}{0.005654459} & 0.000588304 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+13 & \multicolumn{1}{c|}{22.28395573} & 70.78460361 & \multicolumn{1}{c|}{0.024726258} & \multicolumn{1}{c|}{0.005436739} & 0.001464445 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+{\color[HTML]{3C4043} 14} & \multicolumn{1}{c|}{22.28367249} & 70.78447839 & \multicolumn{1}{c|}{0.024653688} & \multicolumn{1}{c|}{0.005558663} & 0.001774091 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+15 & \multicolumn{1}{c|}{22.28297727} & 70.78432534 & \multicolumn{1}{c|}{0.024642006} & \multicolumn{1}{c|}{0.006005665} & 0.002474357 & \cellcolor[HTML]{C6EFCE}{\color[HTML]{006100} C3} \\ \hline
+\end{tabular}
+\caption{k-means iteration - 7}
+\label{tab:k-means iteration - 7}
+\end{table}
+
+
+
+\end{document}

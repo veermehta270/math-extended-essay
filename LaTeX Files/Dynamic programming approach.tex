@@ -1,0 +1,1148 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{chemfig}
+\usepackage{wrapfig}
+\usepackage[margin = 0.4in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[document]{ragged2e}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage{varioref}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\useunder{\uline}{\ul}{}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{tabularray}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,mindmap}
+\usepackage{forest}
+\renewcommand*\thesection{\arabic{section}.0}
+\renewcommand*\thesubsection{\arabic{section}.\arabic{subsection}0}
+
+
+\begin{document}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[3][4][5][6]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(2,\{3,4,5,6\}) &= \text{min}[w(2,3)+g(3,\{4,5,6\})]  \tag{2.3}\label{eq:2.3} \\
+                   &= \text{min}[w(2,4)+g(4,\{3,5,6\})]  \tag{2.4}\label{eq:2.4} \\
+                   &= \text{min}[w(2,5)+g(5,\{3,4,6\})] \tag{2.5}\label{eq:2.5} \\
+                   &= \text{min}[w(2,6)+g(6,\{3,4,5\})] \tag{2.6}\label{eq:2.6} 
+\end{align}
+\end{minipage}
+
+Figure 1 showcases the possibilities of bus travelling from stop 2. It can travel to stops 3,4,5 or 6. The equations representing each of these possibilities are represented towards its right. The aim is to find minimum value out of each of these equations. However each of the equation contains the function $g$ and hence it needs to be solved. The figures and equations below represent the further solution of the equations until an integer value is found for the function $g$. 
+
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[3,[4][5][6]]]
+\end{forest}
+\end{figure}
+\end{minipage}  
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(3,\{4,5,6\}) &= \text{min}[w(3,4)+g(4,\{5,6\})]  \tag{2.3.4}\label{eq:2.3.4} \\
+                   &= \text{min}[w(3,5)+g(5,\{4,6\})]  \tag{2.3.5}\label{eq:2.3.5} \\
+                   &= \text{min}[w(3,6)+g(6,\{4,5\})] \tag{2.3.6}\label{eq:2.3.6} 
+\end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[4,[3][5][6]]]
+\end{forest}
+\end{figure}
+\end{minipage}  
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(4,\{3,5,6\}) &= \text{min}[w(4,3)+g(3,\{5,6\})]  \tag{2.4.3}\label{eq:2.4.3} \\
+                   &= \text{min}[w(4,5)+g(5,\{3,6\})]  \tag{2.4.5}\label{eq:2.4.5} \\
+                   &= \text{min}[w(4,6)+g(6,\{3,5\})] \tag{2.4.6}\label{eq:2.4.6} 
+\end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[5,[3][4][6]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(5,\{3,4,6\}) &= \text{min}[w(5,3)+g(3,\{4,6\})]  \tag{2.5.3}\label{eq:2.5.3} \\
+                   &= \text{min}[w(5,4)+g(4,\{3,6\})]  \tag{2.5.4}\label{eq:2.5.4} \\
+                   &= \text{min}[w(5,6)+g(6,\{3,4\})] \tag{2.5.6}\label{eq:2.5.6} 
+\end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[6,[3][4][5]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(6,\{3,5,4\}) &= \text{min}[w(6,3)+g(3,\{5,4\})]  \tag{2.6.3}\label{eq:2.6.3} \\
+                   &= \text{min}[w(6,4)+g(4,\{3,5\})]  \tag{2.6.4}\label{eq:2.6.4} \\
+                   &= \text{min}[w(6,5)+g(5,\{3,4\})] \tag{2.6.5}\label{eq:2.6.5} 
+\end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[3,[4,[5][6]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(4,\{5,6\}) &= \text{min}[w(4,5)+g(5,\{6\})]  \tag{2.3.4.5}\label{eq:2.3.4.5} \\
+                &= \text{min}[w(4,6)+g(6,\{5\})]  \tag{2.3.4.6}\label{eq:2.3.4.5.6}                   \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[3,[5,[4][6]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(5,\{4,6\}) &= \text{min}[w(5,4)+g(4,\{6\})]  \tag{2.3.5.4}\label{eq:2.3.5.4} \\
+                &= \text{min}[w(5,6)+g(6,\{4\})]  \tag{2.3.5.6}\label{eq:2.3.5.6}                   \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[3,[6,[4][5]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(6,\{4,5\}) &= \text{min}[w(6,4)+g(4,\{5\})]  \tag{2.3.6.4}\label{eq:2.3.6.4} \\
+                &= \text{min}[w(6,5)+g(5,\{4\})]  \tag{2.3.6.5}\label{eq:2.3.6.5}                   \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[4,[3,[5][6]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(3,\{5,6\}) &= \text{min}[w(3,5)+g(5,\{6\})]  \tag{2.4.3.5}\label{eq:2.4.3.5} \\
+                &= \text{min}[w(3,6)+g(6,\{5\})]  \tag{2.4.3.6}\label{eq:2.4.3.6}                   \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[4,[5,[3][6]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(5,\{3,6\}) &= \text{min}[w(5,3)+g(3,\{6\})]  \tag{2.4.5.3}\label{eq:2.4.5.3} \\
+                &= \text{min}[w(5,6)+g(6,\{3\})]  \tag{2.4.5.6}\label{eq:2.4.5.6}                   \end{align}
+\end{minipage} 
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[4,[6,[3][5]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(6,\{3,5\}) &= \text{min}[w(6,3)+g(3,\{5\})]  \tag{2.4.6.3}\label{eq:2.4.6.3} \\
+                &= \text{min}[w(6,5)+g(5,\{3\})]  \tag{2.4.6.5}\label{eq:2.4.6.5}                   \end{align}
+\end{minipage} 
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[5,[3,[4][6]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(3,\{4,6\}) &= \text{min}[w(3,4)+g(4,\{6\})]  \tag{2.5.3.4}\label{eq:2.5.3.4} \\
+                &= \text{min}[w(3,6)+g(6,\{4\})]  \tag{2.5.3.6}\label{eq:2.5.3.6}                   \end{align}
+\end{minipage} 
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[5,[4,[3][6]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(4,\{3,6\}) &= \text{min}[w(4,3)+g(3,\{6\})]  \tag{2.5.4.3}\label{eq:2.5.4.3} \\
+                &= \text{min}[w(4,6)+g(6,\{3\})]  \tag{2.5.4.6}\label{eq:2.5.4.6}                   \end{align}
+\end{minipage} 
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[5,[6,[3][4]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(6,\{3,4\}) &= \text{min}[w(6,3)+g(3,\{4\})]  \tag{2.5.6.3}\label{eq:2.5.6.3} \\
+                &= \text{min}[w(6,4)+g(4,\{3\})]  \tag{2.5.6.4}\label{eq:2.5.6.4}                   \end{align}
+\end{minipage} 
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[6,[5,[3][4]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(5,\{3,4\}) &= \text{min}[w(5,3)+g(3,\{4\})]  \tag{2.6.5.3}\label{eq:2.6.5.3} \\
+                &= \text{min}[w(5,4)+g(4,\{3\})]  \tag{2.6.5.4}\label{eq:2.6.5.4}                   \end{align}
+\end{minipage} 
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[6,[4,[3][5]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(4,\{3,5\}) &= \text{min}[w(4,3)+g(3,\{5\})]  \tag{2.6.4.3}\label{eq:2.6.4.3} \\
+                &= \text{min}[w(4,5)+g(5,\{3\})]  \tag{2.6.4.5}\label{eq:2.6.4.5}                   \end{align}
+\end{minipage} 
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[6,[3,[4][5]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(3,\{4,5\}) &= \text{min}[w(3,4)+g(4,\{5\})]  \tag{2.6.3.4}\label{eq:2.6.3.4} \\
+                &= \text{min}[w(3,5)+g(5,\{4\})]  \tag{2.6.3.5}\label{eq:2.6.3.5}                   \end{align}
+\end{minipage} 
+
+
+\noindent Equation \ref{eq:1.2.3.4.5.6} contains the cost function of $g(6,\phi)$, this means that all the stops given is set $s$ are visited exactly once. So now from stop 6 the bus moves back to the starting point, stop 2. Same logic is used for all the equations. The general formula for this is :
+\begin{equation}
+    g(j,\phi) = w(j,i)
+\end{equation}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[3,[4,[5,[6]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(5,\{6\}) &= \text{min}[w(5,6)+g(6,\phi)]
+    \tag{2.3.4.5.6}\label{eq:1.2.3.4.5.6} 
+    \end{align}
+\end{minipage} 
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[3,[4,[6,[5]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(6,\{5\}) &= \text{min}[w(6,5)+g(5,\phi)]
+    \tag{2.3.4.6.5}\label{eq:2.3.4.6.5} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[3,[5,[4,[6]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(4,\{6\}) &= \text{min}[w(4,6)+g(6,\phi)]
+    \tag{2.3.5.4.6}\label{eq:2.3.5.4.6} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[3,[5,[6,[4]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(6,\{4\}) &= \text{min}[w(6,4)+g(4,\phi)]
+    \tag{2.3.5.6.4}\label{eq:2.3.5.6.4} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[3,[6,[4,[5]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(4,\{5\}) &= \text{min}[w(4,5)+g(5,\phi)]
+    \tag{2.3.6.4.5}\label{eq:2.3.6.4.5} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[3,[6,[5,[4]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(5,\{4\}) &= \text{min}[w(5,4)+g(4,\phi)]
+    \tag{2.3.6.5.4}\label{eq:2.3.6.5.4} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[4,[3,[5,[6]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(5,\{6\}) &= \text{min}[w(5,6)+g(6,\phi)]
+    \tag{2.4.3.5.6}\label{eq:2.4.3.5.6} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[4,[3,[6,[5]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(6,\{5\}) &= \text{min}[w(6,5)+g(5,\phi)]
+    \tag{2.4.3.6.5}\label{eq:2.4.3.6.5} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[4,[5,[3,[6]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(3,\{6\}) &= \text{min}[w(3,6)+g(6,\phi)]
+    \tag{2.4.5.3.6}\label{eq:2.4.5.3.6} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[4,[5,[6,[3]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(6,\{3\}) &= \text{min}[w(6,3)+g(3,\phi)]
+    \tag{2.4.5.6.3}\label{eq:2.4.5.6.3} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[4,[6,[3,[5]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(3,\{5\}) &= \text{min}[w(3,5)+g(5,\phi)]
+    \tag{2.4.6.3.5}\label{eq:2.4.6.3.5} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[4,[6,[5,[3]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(5,\{3\}) &= \text{min}[w(5,3)+g(3,\phi)]
+    \tag{2.4.6.5.3}\label{eq:2.4.6.5.3} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[5,[3,[4,[6]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(4,\{6\}) &= \text{min}[w(4,6)+g(6,\phi)]
+    \tag{2.5.3.4.6}\label{eq:2.5.3.4.6} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[5,[3,[6,[4]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(6,\{4\}) &= \text{min}[w(6,4)+g(4,\phi)]
+    \tag{2.5.3.6.4}\label{eq:2.5.3.6.4} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[5,[4,[3,[6]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(3,\{6\}) &= \text{min}[w(3,6)+g(6,\phi)]
+    \tag{2.5.4.3.6}\label{eq:2.5.4.3.6} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[5,[4,[6,[3]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(6,\{3\}) &= \text{min}[w(6,3)+g(3,\phi)]
+    \tag{2.5.4.6.3}\label{eq:2.5.4.6.3} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[5,[6,[3,[4]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(3,\{4\}) &= \text{min}[w(3,4)+g(4,\phi)]
+    \tag{2.5.6.3.4}\label{eq:2.5.6.3.4} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[5,[6,[4,[3]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(4,\{3\}) &= \text{min}[w(4,3)+g(3,\phi)]
+    \tag{2.5.6.4.3}\label{eq:2.5.6.4.3} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[6,[5,[3,[4]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(3,\{4\}) &= \text{min}[w(3,4)+g(4,\phi)]
+    \tag{2.6.5.3.4}\label{eq:2.6.5.3.4} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[6,[5,[4,[3]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(4,\{3\}) &= \text{min}[w(4,3)+g(3,\phi)]
+    \tag{2.6.5.4.3}\label{eq:2.6.5.4.3} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[6,[4,[5,[3]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(5,\{3\}) &= \text{min}[w(5,3)+g(3,\phi)]
+    \tag{2.6.4.5.3}\label{eq:2.6.4.5.3} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[6,[4,[3,[5]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(3,\{5\}) &= \text{min}[w(3,5)+g(5,\phi)]
+    \tag{2.6.4.3.5}\label{eq:2.6.4.3.5} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[6,[3,[5,[4]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(5,\{4\}) &= \text{min}[w(5,4)+g(4,\phi)]
+    \tag{2.6.3.5.4}\label{eq:2.6.3.5.4} 
+    \end{align}
+\end{minipage}
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[6,[3,[4,[5]]]]]
+\end{forest}
+\end{figure}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{align}
+    g(4,\{5\}) &= \text{min}[w(4,5)+g(5,\phi)]
+    \tag{2.6.3.4.5}\label{eq:2.6.3.4.5} 
+    \end{align}
+\end{minipage}
+
+
+\begin{figure}[H]
+\centering
+    \caption{Caption}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={circle, draw, 
+            minimum size=1.5em,
+            inner sep=1pt,}
+[2,[3,[4,[5,[6]][6,[5]]][5,[4,[6]][6,[4]]][6,[4,[5]][5,[4]]]][4,[3,[5,[6]][6,[5]]][5,[3,[6]][6,[3]]][6,[3,[5]][5,[3]]]][5,[3,[4,[6]][6,[4]]][4,[3,[6]][6,[3]]][6,[3,[4]][4,[3]]]][6,[3,[4,[5]][5,[4]]][4,[3,[5]][5,[3]]][5,[3,[4]][4,[3]]]]]
+\end{forest}
+\end{figure}
+
+\subsection{ Solving equation \ref{eq:2.3}}
+\begin{figure}[H]
+\centering
+    \caption{Expansion of equation \ref{eq:2.3}}
+    \label{fig:my_label}
+\begin{forest}   
+ for tree={}
+[{min(2,3)+g(3,\{4,5,6\}}),[{w(3,4)+g(4,\{5,6\})},[{w(4,5)+g(5,\{6\})},[{w(5,6)+g(6,\{$\phi$\})}]][{w(4,6)+g(6,\{5\})},[{w(6,5)+g(5,\{$\phi$\})}]]][{w(3,5)+g(5,\{4,6\})},[{w(5,4)+g(4,\{6\})},[{w(4,6)+g(6,\{$\phi$\})}]][{w(5,6)+g(6,\{4\})},[{w(6,4)+g(4,\{$\phi$\})}]]][{w(3,6)+g(6,\{4,5\})},[{w(6,4)+g(4,\{5\})},[{w(4,5)+g(5,\{$\phi$\})}]][{w(6,5)+g(5,\{4\})},[{w(5,4)+g(4,\{$\phi$\})}]]]]
+\end{forest}
+\end{figure}
+
+
+Solving equation \ref{eq:2.3.4}
+\begin{align}
+    w(5,6)+g(6,{\phi}) = 85+950 &= 1035 \\
+    w(6,5)+g(5,{\phi}) = 85+1000 &= 1085 \\ 
+    w(4,5)+g(5,{6}) = 400 + 1035 &= 1435 \label{a}\\
+    w(4,6)+g(6,{5}) = 450 + 1085 &= 1535 \label{b}
+\end{align}
+
+    Value of g(4,{5,6}) is given by the equations \ref{a} and \ref{b}. Since objective is to minimise, the one with lowest value is chosen,\\ which is equation \ref{a} 
+    \begin{align}
+ w(3,4)+g(4,{5,6}) = 350+1435 = 1785  
+ \label{sol2.3.4}
+    \end{align}
+
+Solving equation \ref{eq:2.3.5}
+\begin{align}
+     w(4,6)+g(6,{\phi}) = 450+950 &= 1400 \\
+    w(6,4)+g(4,{\phi}) = 450+750 &= 1200 \\ 
+    w(5,4)+g(4,{6}) = 400 + 1400 &= 1800 \label{c}\\
+    w(5,6)+g(6,{4}) = 85 + 1200 &= 1285 \label{d}
+\end{align}
+
+Value of g(5,{4,6}) is given by the equations \ref{c} and \ref{d}. Since objective is to minimise, the one with lowest value is chosen, which is equation \ref{d}.
+
+  \begin{align}
+ w(3,5)+g(5,{4,6}) &= 4750+1285 = 2035  
+ \label{sol2.3.5}
+    \end{align}   
+
+solving equation \ref{eq:2.3.6}
+
+\begin{align}
+     w(4,5)+g(5,{\phi}) = 400+1000 &= 1400 \\
+    w(5,4)+g(4,{\phi}) = 400+750 &= 1150 \\ 
+    w(6,4)+g(4,{5}) = 450+1400 &= 1850 \label{e}\\
+    w(6,5)+g(5,{4}) = 85+1150 &= 1235 \label{f}
+\end{align}
+
+Value of g(6,{5,4}) is given by the equations \ref{e} and \ref{f}. Since objective is to minimise, the one with lowest value is chosen,\\ which is equation \ref{f} 
+
+  \begin{align}
+ w(3,6)+g(6,{4,5}) &= 700+1235 = 1935 
+ \label{sol2.3.6}
+    \end{align}  
+
+Value of g(3,\{4,5,6\}) is given by the equations \ref{sol2.3.4}, \ref{sol2.3.5} and \ref{sol2.3.6}. Since objective is to minimise, the one with lowest value is chosen,\\ which is equation \ref{sol2.3.4}.
+
+\begin{equation}
+    w(2,3)+g(3,{4,5,6}) = 290 + 1785 = 2075 \label{sol2.3}
+\end{equation}
+   
+\subsection{Solving Equation \ref{eq:2.4}}
+
+\begin{figure}[H]
+    \centering
+\begin{forest}
+    [{min(w(2,4)+g(4,\{3,5,6\}))},[{w(4,3)+g(3,\{5,6\})},[{w(3,5)+g(5,\{6\})},[{w(5,6)+g(6,\{$\phi$\})}]],[{w(3,6)+g(6,\{5\})},[{w(6,5)+g(5,\{$\phi$\})}]]][{w(4,5)+g(5,\{3,6\})},[{w(5,3)+g(3,\{6\})},[{w(3,6)+g(6,\{$\phi$\})}]][{w(5,6)+g(6,\{3\})},[{w(6,3)+g(3,\{$\phi$\})}]]][{w(4,6)+g(6,\{3,5\})},[{w(6,3)+(3,\{5\})},[{w(3,5)+g(5,\{$\phi$\})}]][{w(6,5)+g(5,\{3\})},[{w(5,3)+g(3,{$\phi$})}]]]]
+\end{forest}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
+Solving equation \ref{eq:2.4.3}
+\begin{align}
+    w(5,6)+g(6,{\phi}) = 85 + 950 &= 1035\\
+    w(6,5)+g(5,{\phi}) = 85 + 1000 &= 1085 \\
+    w(3,5)+g(5,{6}) = 750 + 1035 &= 1785\label{g} \\
+    w(3,6)+g(6,{5}) = 700 + 1085 &= 1785 \label{h}
+\end{align}
+
+Value of g(6,{5,4}) is given by the equations \ref{g} and \ref{h}. Since objective is to minimise, the one with lowest value is chosen, since both of the equations have same value, both the equations are applicable.  
+
+\begin{align}
+    w(4,3)+g(3,{5,6}) = 350 + 1785 = 2135 \label{sol2.4.3}
+\end{align}
+
+Solving equation \ref{eq:2.4.5}
+\begin{align}
+     w(3,6)+g(6,{\phi}) = 700 + 950 &= 1650 \\
+     w(6,3)+g(3,{\phi}) = 700 + 290 &= 990 \\
+     w(5,3)+g(3,{6}) = 750 + 1650 &= 2400 \label{i}\\ 
+     w(5,6)+g(6,{3}) = 85 + 990 &= 1075 \label{j}    
+\end{align}
+
+Value of g(5,{3,6}) is given by the equations \ref{i} and \ref{j}. Since objective is to minimise, the one with lowest value is chosen,\\ which is equation \ref{j}. 
+
+\begin{align}
+    w(4,5)+g(5,{3,6}) = 400 + 1075 = 1475 \label{sol2.4.5}
+\end{align}
+
+
+Solving equation \ref{eq:2.4.6}
+\begin{align}
+    w(3,5)+g(5,{\phi}) = 750 + 1000 &= 1750 \\
+    w(5,3)+g(3,{\phi}) = 750 + 290 &= 1040 \\
+    w(6,3)+(3,{5}) = 700 + 1750 &= 2450 \label{k}\\
+    w(6,5)+g(5,{3}) = 85 + 1040 = 1125 \label{l}
+\end{align}
+
+Value of g(6,{3,5}) is given by the equations \ref{k} and \ref{l}. Since objective is to minimise, the one with lowest value is chosen,\\ which is equation \ref{l}. 
+
+\begin{align}
+    w(4,6)+g(6,{3,5}) = 450 + 1125 = 1575 \label{sol2.4.6}
+\end{align}
+
+Value of g(4,\{3,5,6\}) is given by the equations \ref{sol2.4.3}, \ref{sol2.4.5} and \ref{sol2.4.6}. Since objective is to minimise, the one with lowest value is chosen, which is equation \ref{sol2.4.5}.
+
+\begin{align}
+    w(2,4)+g(4,{3,5,6}) = 750+1475 = 2225 \label{sol2.4}
+\end{align}
+
+\subsection{Solving equation 2.5}
+
+\begin{figure}[H]
+    \centering
+\begin{forest}
+    [{min(w(2,5)+g(5,\{3,4,6\}))},[{w(5,3)+g(3,\{4,6\})},[{w(3,4)+g(4,\{6\})},[{w(4,6)+g(6,\{$\phi$\})}]],[{w(3,6)+g(6,\{4\})},[{w(6,4)+g(4,\{$\phi$\})}]]][{w(5,4)+g(4,\{3,6\})},[{w(4,3)+g(3,\{6\})},[{w(3,6)+g(6,\{$\phi$\})}]][{w(4,6)+g(6,\{3\})},[{w(6,3)+g(3,\{$\phi$\})}]]][{w(5,6)+g(6,\{3,4\})},[{w(6,3)+g(3,\{4\})},[{w(3,4)+g(4,\{$\phi$\})}]][{w(6,4)+g(4,\{3\})},[{w(4,3)+g(3,\{$\phi$\})}]]]]
+\end{forest}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
+Solving equation \ref{eq:2.5.3}
+\begin{align}
+    w(4,6)+g(6,{\phi} = 450+950 &= 1400\\
+    w(6,4)+g(4,{\phi} = 450+750 &= 1200 \\
+    w(3,4)+g(4,{6} = 350+1400 &= 1750 \label{m}\\
+    w(3,6)+g(6,{4}) = 700+1200 &=1900 \label{n} \\
+\end{align}
+
+Value of g(3,{4,6}) is given by the equations \ref{n} and \ref{m}. Since objective is to minimise, the one with lowest value is chosen,\\ which is equation \ref{m}.
+
+\begin{align}
+    w(5,3)+g(3,{4,6}) = 750+1750 = 2500 \label{sol2.5.3}
+\end{align}
+
+Solving equation \ref{eq:2.5.4}
+\begin{align}
+w(3,6)+g(6,{\phi} = 700+950 &= 1650 \\
+w(6,3)+g(3,{\phi}  = 700+290 &= 990   \\
+w(4,3)+g(3,{6}) = 350+1650 &= 2000 \label{o} \\
+w(4,6)+g(6,{3}) = 450+990 = 1440 \label{p} 
+\end{align}
+
+Value of g(4,{3,6}) is given by the equations \ref{o} and \ref{p}. Since objective is to minimise, the one with lowest value is chosen,\\ which is equation \ref{p}.
+
+\begin{align}
+    w(5,4)+g(4,{3,6}) = 400+1440 = 1840\label{sol2.5.4}
+\end{align}
+
+Solving equation\ref{eq:2.5.6}
+
+\begin{align}
+w(3,4)+g(4,{\phi}) =350+750 &= 1100 \\
+w(4,3)+g(3,{\phi}) = 350+290 &= 640 \\
+w(6,3)+g(3,{4}) = 700+1100 &= 1800 \label{q} \\
+w(6,4)+g(4,{3}) = 450+640 &= 1090 \label{r}
+\end{align}
+
+Value of g(6,{3,4}) is given by the equations \ref{q} and \ref{r}. Since objective is to minimise, the one with lowest value is chosen,\\ which is equation \ref{r}.
+
+
+
+\begin{align}
+    w(5,6)+g(6,{3,4}) = 85+1090 = 1175 \label{sol2.5.6}
+\end{align}
+
+Value of g(5,\{3,4,6\}) is given by the equations \ref{sol2.5.3}, \ref{sol2.5.4} and \ref{sol2.5.6}. Since objective is to minimise, the one with lowest value is chosen, which is equation \ref{sol2.5.6}.
+
+\begin{align}
+    w(2,5)+g(5,{3,4,6}) = 1000 + 1175 = 2175 \label{sol2.5}
+\end{align}
+
+
+
+\subsection{Solving equation \ref{eq:2.6}}
+
+\begin{figure}[H]
+    \centering
+\begin{forest}
+    [{min(2,6)+g(6,\{3,4,5\})},[{w(6,3)+g(3,\{4,5\})},[{w(3,4)+g(4,\{5\})},[{w(4,5)+g(5,\{$\phi$\})}]],[{w(3,5)+g(5,\{4\})},[{w(5,4)+g(4,\{$\phi$\})}]]][{w(6,4)+g(4,\{3,5\})},[{w(4,3)+g(3,\{5\})},[{w(3,5)+g(5,\{$\phi$\})}]][{w(4,5)+g(5,\{3\})},[{w(5,3)+g(3,\{$\phi$\})}]]][{w(6,5)+g(5,\{3,4\})},[{w(5,3)+g(3,\{4\})},[{w(3,4)+g(4,\{$\phi$\})}]][{w(5,4)+g(4,\{3\})},[{w(4,3)+g(3,\{$\phi$\})}]]]]
+\end{forest}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
+
+Solving equation \ref{eq:2.6.3}
+\begin{align}
+ w(4,5)+g(5,{\phi}) = 400+1000 &= 1400\\
+ w(5,4)+g(4,{\phi}) = 400+750 &= 1150 \\
+ w(3,4)+g(4,{5}) = 350+1400 &= 1750 \label{s}\\
+ w(3,5)+g(3,{4,5}) = 750+1150 &=1900 \label{t}
+\end{align}
+
+
+Value of g(3,{4,5}) is given by the equations \ref{s} and \ref{t}. Since objective is to minimise, the one with lowest value is chosen, which is equation \ref{s}.
+
+\begin{align}
+    w(6,3)+g(3,{4,5})=700+1750=2450 \label{sol2.6.3}
+\end{align}
+
+Solving equation \ref{eq:2.6.4}
+
+\begin{align}
+    w(3,5)+g(5,{\phi}) =  750+1000 &= 1750\\
+    w(5,3)+g(3,{\phi}) =  750+290 &= 1040\\
+    w(4,3)+g(3,\{5\}) = 350+1750 &= 2100 \label{u}\\
+    w(4,5)+g(5,\{3\}) = 400+1040 &= 1440 \label{v}  
+\end{align}
+
+Value of g(4,{3,5}) is given by the equations \ref{u} and \ref{v}. Since objective is to minimise, the one with lowest value is chosen, which is equation \ref{v}.
+
+\begin{align}
+    w(6,4)+g(4,\{3,5\}) = 450+1440 = 1890
+\end{align}
+
+Solving equation \ref{eq:2.6.5}
+
+\begin{align}
+w(3,4)+g(4,{phi}) = 350+750 &= 1100 \\
+w(4,3)+g(3,{phi}) = 350+290 &= 640 \\
+w(5,3)+g(3,\{4\}) = 750+1100 &= 1850 \label{w}\\
+w(5,4)+g(4,\{3\}) = 400+640 &= 1040 \label{x}
+\end{align}
+
+\noindent Value of g(5,{3,4}) is given by the equations \ref{w} and \ref{x}. Since objective is to minimise, the one with lowest value is chosen, which is equation \ref{x}.
+
+\begin{align}
+    w(6,5)+g(5,{3,4}) = 85+1040 = 1125 \label{sol2.6.5}
+\end{align}
+
+\noindent Value of g(6,\{3,4,5\}) is given by the equations \ref{sol2.6.3}, \ref{sol2.6.4} and \ref{sol2.6.5}. Since objective is to minimise, the one with lowest value is chosen, which is equation \ref{sol2.5.6}.
+
+\begin{align}
+    w(2,6)+g(6,{3,4,5}) = 950+1125 = 2075 \label{sol2.6}
+\end{align}
+
+\subsection{Solving the problem}
+
+\noindent Value of g(2,\{3,4,5,6\}) is given by the equations \ref{sol2.3}, \ref{sol2.4}, \ref{sol2.5} and \ref{sol2.6}. Since objective is to minimise, the one with lowest value is chosen, which are equation \ref{sol2.3} and \ref{sol2.6}.
+
+\noindent Since \ref{sol2.3} and \ref{sol2.6} both have the lowest and the same value, the dynamic programming gives us 2 optimum routes which are :
+
+$$2\longrightarrow3\longrightarrow4\longrightarrow5\longrightarrow6\longrightarrow2$$
+
+
+$$2\longrightarrow6\longrightarrow5\longrightarrow4\longrightarrow3\longrightarrow2$$
+
+\noindent In both the cases the net distance travelled by the bus is 2075m.
+
+\noindent To find the optimum route for the second cluster which are stops 7 to 15, a code was created which used dynamic programming algorithm to find the optimum route. 
+
+\noindent The optimum route given by it is 
+$$ 7\longrightarrow 12\longrightarrow 14\longrightarrow 13\longrightarrow 15\longrightarrow 11\longrightarrow 8\longrightarrow 10\longrightarrow 9\longrightarrow 7$$
+
+\noindent Now if we combine both the optimum routes and add stop 1 at the start and the end of the route we get the route :
+$$1\longrightarrow 2\longrightarrow 3\longrightarrow 4\longrightarrow 5\longrightarrow 6\longrightarrow 7\longrightarrow 12\longrightarrow 14\longrightarrow 13\longrightarrow 15\longrightarrow 11\longrightarrow 8\longrightarrow 10\longrightarrow 9\longrightarrow 1$$
+
+\noindent The distance bus needs to travel during this route is : 9523m.
+
+
+
+
+
+
+
+\end{document}
